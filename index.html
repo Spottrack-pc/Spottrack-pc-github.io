@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spottrack - Barra Mejorada</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Contenedor de la barra de navegación -->
+<div id="nav-container">
+  <nav class="nav-bar">
+    <a href="#" class="nav-item active" data-section="inicio">
+      <i class="fas fa-home"></i>
+      <span>Inicio</span>
+    </a>
+    <a href="#" class="nav-item" data-section="buscar">
+      <i class="fas fa-search"></i>
+      <span>Buscar</span>
+    </a>
+    <a href="#" class="nav-item" data-section="playlist">
+      <i class="fas fa-music"></i>
+      <span>Playlist</span>
+    </a>
+    <a href="#" class="nav-item" data-section="ajustes">
+      <i class="fas fa-cog"></i>
+      <span>Ajustes</span>
+    </a>
+  </nav>
+  <!-- Botón de flecha -->
+  <div id="toggle-nav">
+    <i class="fas fa-chevron-down"></i>
+  </div>
+</div>
+
+
+  <!-- Contenedor de las secciones -->
+  <div id="sections">
+    <!-- Sección Inicio -->
+    <div id="inicio" class="section active">
+      <div class="container">
+        <div class="carousel">
+          <div class="carousel-item">
+            <img src="images/image1.jpg" alt="Image 1">
+            <div class="image-title"></div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/image2.jpg" alt="Image 2">
+            <div class="image-title"></div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/image3.jpg" alt="Image 3">
+            <div class="image-title"></div>
+          </div>
+          <button class="carousel-button left">Siguiente</button>
+          <button class="carousel-action-button" id="action-button">Descargar ahora</button>
+        </div>
+
+        <div class="sidebar">
+          <div class="sidebar-header">
+            <h3>Estado y información de Spottrack</h3>
+          </div>
+          <div class="sidebar-content">
+            <div class="list-container">
+              <ul>
+                <li>
+                  <iframe src="https://spottrackstatus.betteruptime.com/badge?theme=dark" width="250" height="30" frameborder="0" scrolling="no"></iframe>
+                </li>
+              </ul>
+            </div>
+            <div class="list-container">
+              <ul class="user-info">
+                <li>
+                  <i class="fas fa-users"></i>
+                  <span>53 Usuarios totales</span>
+                </li>
+              </ul>
+            </div>
+           <div class="list-container">
+  <ul class="song-info">
+    <li>
+      <i class="fas fa-music"></i>
+      <span class="total-songs-text">‎ ‎ ‎ 890 Canciones reproducidas totales</span>
+    </li>
+  </ul>
+</div>
+       </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección Buscar -->
+    <div id="buscar" class="section">
+      <div id="app">
+        <div id="search-bar-container">
+          <div id="search-container">
+            <input id="search-input" type="text" placeholder="Buscar canciones...">
+            <button id="search-button">Buscar</button>
+          </div>
+        </div>
+        <div id="search-results-container" style="display: none;">
+          <div id="results-container"></div>
+        </div>
+        <p>‎ </p>
+        <div id="player-container">
+          <div id="player-thumbnail">
+            <div id="video-player"></div>
+          </div>
+          <div id="player-info">
+            <h3 id="song-title">Nada agregado</h3>
+            <p id="song-artist">Busca una canción</p>
+            <div id="time-controls">
+              <span id="current-time">00:00</span>
+              <input id="progress-bar" type="range" value="0" min="0" max="100">
+              <span id="total-time">00:00</span>
+            </div>
+            <div id="player-controls">
+              <button id="prev-button"><i class="fas fa-step-backward"></i></button>
+              <button id="playpause-button"><i class="fas fa-play"></i></button>
+              <button id="next-button"><i class="fas fa-step-forward"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección Playlist -->
+    <div id="playlist" class="section">
+
+
+<div class="playlist-container">
+        <div class="playlist-title">Mi Biblioteca de Música</div>
+        
+        <div id="song-list">
+            <!-- Los elementos de canciones se añadirán aquí dinámicamente -->
+        </div>
+
+        <button class="add-song">Añadir Canción</button>
+        <div class="error-message" id="error-message"></div>
+    </div>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
+
+
+
+    </div>
+
+    <!-- Sección Ajustes -->
+    <div id="ajustes" class="section">
+
+
+<!-- Contenedor de mensaje de bienvenida -->
+<div id="welcome-message" style="display: none;">
+    <p id="welcome-text"></p>
+    <audio id="welcome-sound" src="sounds/welcome.mp3"></audio>
+</div>
+
+<!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="settings-container">
+    <!-- Contenedor de perfil -->
+    <div>
+        <h2>Tu perfil</h2>
+        <div id="profile-picture-container">
+            <span id="add-photo">+</span>
+            <img id="profile-picture" src="" alt="Foto de perfil" style="display: none;">
+        </div>
+        <p id="username">Usuario</p>
+
+        <p>___________________________________</p>
+        <button id="change-photo">Cambiar foto de perfil</button>
+        <button id="change-username">Cambiar nombre de usuario</button>
+        <div id="username-change-container" style="display: none; margin-top: 10px;">
+            <input type="text" id="new-username" placeholder="Nuevo nombre de usuario" style="padding: 5px; width: 70%; margin-right: 5px;">
+            <button id="save-username" style="padding: 5px; background-color: #007bff; color: white; border: none; border-radius: 3px;">Listo</button>
+        </div>
+        <p>___________________________________</p>
+
+<p>‎ 
+
+            <a href="https://spottrack-web.github.io" target="_blank">Ver políticas y privacidad</a>
+        </p>
+    </div>
+
+    <!-- Contenedor de ajustes -->
+    <div>
+        <h2>Apartado de ajustes</h2>
+        <p>Configura tu experiencia en Spottrack de manera personalizada, donde podrás establecerte una foto de perfil única y personalizada a tu gusto y con el estilo de Spottrack. También tienes la opción de cambiarte el nombre de usuario. Aquí te contamos todo esto.</p>
+
+        <p>1. Foto de perfil: en Spottrack puedes colocarte una foto de perfil para identificarte más, solo archivos de imagen PNG, JPG, JPEG, etc. están admitidos.</p>
+
+        <p>2. Nombre de usuario: El nombre de usuario sería otro identificador más en Spottrack. Puedes poner tu nombre único en la app.</p>
+
+        <p>3. Cuenta: En Spottrack no necesitas crear una cuenta para usar la app. Simplemente puedes usar un perfil que no está asociado a ninguna cuenta externa o servidor, por lo cual tus datos están seguros.</p>
+
+        <p>Datos de usuarios: Los datos de usuarios como foto de perfil o nombre se almacenan en el LocalStorage del navegador, por lo cual están protegidos por las medidas de seguridad de tu navegador. Recomendamos tener tu sistema operativo actualizado, el navegador y contar con un buen antivirus.</p>
+    </div>
+</div>
+
+<!-- Link a los scripts (Coloca esto justo antes del cierre de la etiqueta </body>) -->
+<script src="app.js"></script>
+
+
+
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
+<!--- Barra negra superior --->
+<div id="top-bar">
+  <img src="images/logo.png" alt="Logo Spottrack" id="top-bar-logo">
+  <span>Spottrack PC 1.0</span>
+</div>
+
