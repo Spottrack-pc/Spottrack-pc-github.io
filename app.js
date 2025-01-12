@@ -63,7 +63,7 @@ window.addEventListener('DOMContentLoaded', () => {
   changeSection('inicio');
 });
 
-const API_KEY = "AIzaSyDXc7sOLTpd5KuUcR7lOB3lT-3yI3D_d6U"; // Reemplaza con tu API Key de YouTube
+const API_KEY = "AIzaSyCiEjKo8cps3pDY1XeatDdVhQHfZfrYahE"; // Reemplaza con tu API Key de YouTube
 let player;
 let currentVideoId;
 
