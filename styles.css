@@ -666,8 +666,8 @@ body {
 }
 
 #player-controls button:hover {
-  transform: scale(1.1);
-  background: linear-gradient(90deg, #4bf4e1, #f464c4, #a64bf4);
+  transform: scale(1.1); /* Hacer un ligero zoom */
+  box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5); /* Brillo reducido */
 }
 
 #player-controls button:focus {
